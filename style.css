@@ -1,0 +1,201 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none; 
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+
+.nav {
+  display: flex;
+  width: 60%;
+  height: 150px;
+  margin: 0 auto;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.nav > a {
+  width: 120px;
+  height: auto;
+}
+
+.logo {
+  width: 95%;
+  height: auto;
+}
+
+.menu {
+  display: flex;
+}
+
+.menu > a {
+  text-decoration: none;
+  color: black;
+}
+
+.register, .login, .logout {
+  font-size: 18px;
+  margin: 0px 20px;
+  border: 1px solid black;
+  padding: 5px 20px;
+}
+
+
+
+.container {
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  border: 2px solid black;
+  /* background-color: rgba(247, 247, 50, 0.8); */
+}
+
+.addMessage {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+/* .addNickname {
+  padding: 20px 30px;
+  width: 20%;
+  height: 25px;
+  border: 1px dashed black;
+  border-radius: 10px;
+  margin: 40px auto 10px 115px;
+  font-size: 16px;
+} */
+
+.erroMsg {
+  padding: 20px 0px;
+  width: 80%;
+  margin: 30px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+textarea {
+  padding: 20px 30px;
+  width: 80%;
+  height: auto;
+  font-family: inherit;
+  font-size: 18px;
+  outline: none;
+  resize: none;
+  border: 2px dashed rgba(0, 0, 0, .5);
+  border-radius: 15px;
+  margin: 10px auto 10px;
+}
+
+
+
+.submit {
+  width: 15%;
+  height: 30px;
+  border: 1px dashed black;
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px 115px 10px auto;
+  font-size: 16px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.register:hover, .login:hover, .logout:hover, .submit:hover{
+  color: white;
+  background-color:  rgb(0, 0, 0);
+  transition: all ease .3s;
+  cursor: pointer;
+}
+
+.messages {
+  display: flex;
+  margin: 10px auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message {
+  padding: 20px 0px;
+  margin: 10px;
+  width: 80%;
+  height: auto;
+  border-radius: 15px;
+  border: 2px dashed black;
+  /* background-color: #06c1fa; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.avatar {
+  margin: 0px 40px;
+  display: flex;
+  width: 18%;
+  height: 18%;
+  /* justify-content: center;
+  align-items: center; */
+  border: 4px double rgb(145, 145, 145);
+  border-radius: 50%;
+}
+
+.avatarImg{
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nickname {
+  font-size: 18px;
+  color: rgb(145, 145, 145);
+}
+
+.messageContent {
+  font-size: 16px;
+  margin: 8px 0px;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.editAndDate {
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 14px;
+  color: rgb(145, 145, 145);
+}
+
+.editMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.edit, .delete {
+  font-size: 14px;
+  padding: 5px 15px;
+}
+
+.edit:hover, .delete:hover {
+  color: white;
+  background-color:  rgb(84, 84, 84);
+  transition: all ease .3s;
+  cursor: pointer;
+}
