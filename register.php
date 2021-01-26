@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
       padding: 10px 20px;
     }
 
-    div{
+    div {
       width: 150px;
       font-size: 18px;
       margin: 0 auto;
@@ -57,7 +58,8 @@
       line-height: 34px;
     }
 
-    .submit:hover, a:hover{
+    .submit:hover,
+    a:hover {
       color: white;
       background-color: black;
       cursor: pointer;
@@ -65,31 +67,33 @@
     }
   </style>
 </head>
+
 <body>
   <h1>想成為小森林的成員？請先註冊</h1>
   <?php
-    if (!empty($_GET[ErroMsg])) {
-      $code = $_GET[ErroMsg];
-      $msg = 'Error';
-      if ($code === '1') {
-        $msg = '暱稱、帳號、密碼，缺一不可';
-      }
-      if ($code === '2') {
-        $msg = '此帳號已被註冊';
-      }
-      echo '<h2 class="erroMsg">' . $msg . '</h2>';
+  if (!empty($_GET['ErroMsg'])) {
+    $code = $_GET['ErroMsg'];
+    $msg = 'Error';
+    if ($code === '1') {
+      $msg = '暱稱、帳號、密碼，缺一不可';
     }
+    if ($code === '2') {
+      $msg = '此帳號已被註冊';
+    }
+    echo '<h2 class="erroMsg">' . $msg . '</h2>';
+  }
   ?>
   <form action="./handle_register.php" method="POST">
     <div class="nickname">暱稱：</div>
     <input type="text" name="nickname"><br>
     <div class="username"">帳號：</div>
-    <input type="text" name="username"><br>
-    <div class="password">密碼：</div>
-    <input type="password" name="password"><br>
-    <input class="submit" type="submit" value="送出">
-    <a href="index.php">回首頁</a>
+    <input type=" text" name="username"><br>
+      <div class="password">密碼：</div>
+      <input type="password" name="password"><br>
+      <input class="submit" type="submit" value="送出">
+      <a href="index.php">回首頁</a>
   </form>
 
 </body>
+
 </html>

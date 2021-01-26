@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
       text-align: center;
       padding: 10px 20px;
     }
+
     div {
       width: 150px;
       font-size: 18px;
@@ -54,7 +56,8 @@
       line-height: 34px;
     }
 
-    .submit:hover, a:hover{
+    .submit:hover,
+    a:hover {
       color: white;
       background-color: black;
       cursor: pointer;
@@ -66,11 +69,12 @@
     }
   </style>
 </head>
+
 <body>
-<h1>歡迎回來，請登入</h1>
-<?php
-  if (!empty($_GET[ErroMsg])) {
-    $code = $_GET[ErroMsg];
+  <h1>歡迎回來，請登入</h1>
+  <?php
+  if (!empty($_GET['ErroMsg'])) {
+    $code = $_GET['ErroMsg'];
     $msg = 'Error';
     if ($code === '1') {
       $msg = '帳號、密碼，缺一不可';
@@ -80,7 +84,7 @@
     }
     echo '<h2 class="erroMsg">' . $msg . '</h2>';
   }
-?>
+  ?>
   <form action="./handle_login.php" method="POST">
     <div class="username">帳號：</div>
     <input type="text" name="username"><br>
@@ -90,6 +94,7 @@
     <a href="register.php">去註冊</a>
     <a href="index.php">回首頁</a>
   </form>
-  
+
 </body>
+
 </html>

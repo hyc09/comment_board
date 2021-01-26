@@ -1,29 +1,22 @@
 <?php
+session_start();
 require_once 'conn.php';
+require_once 'utils.php';
 
 if (empty($_POST['content'])) {
   header('Location: index.php?ErroMsg=1');
   die('資料不全');
 }
 
-$username = $_COOKIE['username'];
-$user_sql = sprintf(
-  "select nickname from users where user_name='%s'", $username
-);
-
-$user_result = $conn->query($user_sql);
-$row = $user_result->fetch_assoc();
-
-$nickname = $row['nickname'];
+$user = getUserFromUsername($_SESSION['username']);
+$nickname = $user['nickname'];
 $content = $_POST['content'];
 
-$sql = sprintf(
-  "INSERT INTO comments(nickname, content) VALUES('%s', '%s')",
-  $nickname,
-  $content
-);
+$sql = "INSERT INTO comments(nickname, content) VALUES(?, ?)";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('ss', $nickname, $content);
 
-$result = $conn->query($sql); 
+$result = $stmt->execute();
 if (!$result) {
   die($conn->error);
 }
